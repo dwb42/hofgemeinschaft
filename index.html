@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bullerbü bei Hamburg sucht Mitgründer</title>
+<meta name="description" content="Wir gründen eine Hof-Lebensgemeinschaft im Hamburger Umland. Aktuell suchen wir eine passende Immobilie und Menschen, die Lust haben, von Anfang an dabei zu sein.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #F1F1F0;
+    --ink: #1A1A1A;
+    --ink-2: #3A3A3A;
+    --ink-soft: #6B6B6B;
+    --line: #D4D4D2;
+    --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--ink);
+  }
+  a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  a:hover { border-bottom-color: var(--ink); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+  .eyebrow {
+    font: 500 12px/1.4 var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .top { padding: 56px 0 0; }
+
+  .hero { padding: 24px 0 48px; }
+  .hero h1 {
+    font: 600 48px/1.1 var(--font-sans);
+    letter-spacing: -0.01em;
+    margin: 0 0 28px;
+  }
+  .lead {
+    font: 400 20px/1.55 var(--font-sans);
+    color: var(--ink-2);
+    max-width: 620px;
+    margin: 0;
+  }
+
+  nav.toc {
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 8px;
+  }
+  nav.toc p.eyebrow { margin: 0 0 24px; }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 4px 32px;
+  }
+  .toc-link { display: flex; align-items: baseline; gap: 12px; border-bottom: none; padding: 6px 0; }
+  .toc-link:hover .toc-title { border-bottom-color: var(--ink); }
+  .toc-title { border-bottom: 1px solid transparent; font: 400 15px/1.4 var(--font-sans); color: var(--ink); }
+  .toc-num { font: 500 12px/1.4 var(--font-mono); color: var(--ink-soft); flex-shrink: 0; width: 20px; }
+
+  .chapter { padding: 48px 0; border-top: 1px solid var(--line); }
+  .chapter:last-of-type { padding-bottom: 64px; }
+  .num {
+    font: 500 12px/1.4 var(--font-mono);
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .chapter h2 {
+    font: 600 25px/1.28 var(--font-sans);
+    margin: 12px 0 20px;
+  }
+  .chapter p {
+    font: 400 17px/1.7 var(--font-sans);
+    margin: 0 0 18px;
+  }
+  .chapter p:last-child { margin-bottom: 0; }
+  #s18 p { color: var(--ink-soft); font-style: italic; }
+
+  .kontakt { background: var(--ink); color: var(--bg); }
+  .kontakt .wrap { padding: 96px 32px; }
+  .kontakt .num { color: #A6A6A5; }
+  .kontakt h2 {
+    font: 600 34px/1.2 var(--font-sans);
+    margin: 16px 0 24px;
+  }
+  .kontakt .lead { color: #D6D6D5; margin: 0 0 40px; max-width: 560px; }
+  .contact-name { font: 500 17px/1.5 var(--font-sans); margin: 0 0 4px; }
+  .contact-name .role { color: #A6A6A5; font-weight: 400; }
+  .contact-list { display: flex; flex-direction: column; gap: 12px; }
+  .contact-row { display: flex; align-items: center; gap: 10px; }
+  .contact-row a {
+    font: 400 17px/1.5 var(--font-sans);
+    color: var(--bg);
+    border-bottom: 1px solid #5A5A59;
+  }
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid #5A5A59;
+    border-radius: 2px;
+    color: #D6D6D5;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .copy-btn .icon-check { display: none; }
+  .copy-btn.copied .icon-copy { display: none; }
+  .copy-btn.copied .icon-check { display: inline-flex; }
+
+  footer { padding: 32px 32px; }
+  footer .num { margin: 0; }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 0 20px; }
+    .top { padding: 32px 0 0; }
+    .hero { padding: 18px 0 32px; }
+    .hero h1 { font: 600 32px/1.15 var(--font-sans); letter-spacing: -0.005em; margin: 0 0 18px; }
+    .lead { font-size: 17px; }
+    nav.toc { padding: 24px 0; }
+    .chapter { padding: 32px 0; }
+    .chapter:last-of-type { padding-bottom: 40px; }
+    .chapter h2 { font: 600 21px/1.3 var(--font-sans); margin: 8px 0 14px; }
+    .chapter p { font: 400 16px/1.65 var(--font-sans); margin: 0 0 14px; }
+    .kontakt .wrap { padding: 48px 20px 56px; }
+    .kontakt h2 { font: 600 26px/1.2 var(--font-sans); margin: 12px 0 18px; }
+    footer { padding: 20px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top wrap">
+  <p class="eyebrow">Hofgemeinschaft bei Hamburg — Gründungsphase</p>
+</div>
+
+<header class="hero wrap">
+  <h1>Bullerbü bei Hamburg sucht Mitgründer</h1>
+  <p class="lead">Wir gründen eine Hof-Lebensgemeinschaft im Hamburger Umland. Aktuell suchen wir eine passende Immobilie und Menschen, die Lust haben, von Anfang an dabei zu sein.</p>
+</header>
+
+<nav class="toc wrap" aria-label="Inhalt">
+  <p class="eyebrow">Inhalt</p>
+  <div class="toc-grid">
+          <a class="toc-link" href="#s01"><span class="toc-num">01</span><span class="toc-title">Die Vision</span></a>
+          <a class="toc-link" href="#s02"><span class="toc-num">02</span><span class="toc-title">Aufm Land und doch schnell in Hamburg</span></a>
+          <a class="toc-link" href="#s03"><span class="toc-num">03</span><span class="toc-title">Persönlicher Wohnraum</span></a>
+          <a class="toc-link" href="#s04"><span class="toc-num">04</span><span class="toc-title">Gemeinsame Außenflächen und Gemeinschaftsräume</span></a>
+          <a class="toc-link" href="#s05"><span class="toc-num">05</span><span class="toc-title">Ein Paradies für Kinder</span></a>
+          <a class="toc-link" href="#s06"><span class="toc-num">06</span><span class="toc-title">Dorfleben mit guten Nachbarn</span></a>
+          <a class="toc-link" href="#s07"><span class="toc-num">07</span><span class="toc-title">Den Hof gründen</span></a>
+          <a class="toc-link" href="#s08"><span class="toc-num">08</span><span class="toc-title">Den Hof kaufen</span></a>
+          <a class="toc-link" href="#s09"><span class="toc-num">09</span><span class="toc-title">Das Gründerteam zieht ein</span></a>
+          <a class="toc-link" href="#s10"><span class="toc-num">10</span><span class="toc-title">Den Hof gestalten und betreiben</span></a>
+          <a class="toc-link" href="#s11"><span class="toc-num">11</span><span class="toc-title">Heterogene Gruppe mit homogenen Grundwerten</span></a>
+          <a class="toc-link" href="#s12"><span class="toc-num">12</span><span class="toc-title">Gerne mit Tieren</span></a>
+          <a class="toc-link" href="#s13"><span class="toc-num">13</span><span class="toc-title">Gerne mit Landwirtschaft</span></a>
+          <a class="toc-link" href="#s14"><span class="toc-num">14</span><span class="toc-title">Gerne mit Gewerben</span></a>
+          <a class="toc-link" href="#s15"><span class="toc-num">15</span><span class="toc-title">Aufnahme von Mitbewohnern</span></a>
+          <a class="toc-link" href="#s16"><span class="toc-num">16</span><span class="toc-title">Austritt von Mitbewohnern</span></a>
+          <a class="toc-link" href="#s17"><span class="toc-num">17</span><span class="toc-title">Außerfamiliäre Hofnachfolge / Altenteil</span></a>
+          <a class="toc-link" href="#s18"><span class="toc-num">18</span><span class="toc-title">Über uns</span></a>
+          <a class="toc-link" href="#s19"><span class="toc-num">19</span><span class="toc-title">Kontakt</span></a>
+  </div>
+</nav>
+
+<main class="wrap">
+    <section id="s01" class="chapter">
+      <p class="num">01</p>
+      <h2>Die Vision</h2>
+      <p>Wir wollen schon seit langem raus aus der Stadt. Raus aufs Land. Aber nur wenn wir da nicht alleine sind, sondern coole Leute um uns rum haben. Deshalb werden wir einen Hof kaufen, auf dem 5+ Parteien entspannt, jede in ihrer eigenen Wohneinheit, leben können.</p>
+      <p>Der Hof soll mehr sein als ein Ort zum Schlafen und Netflixen. Wir wollen einen lebendigen Ort schaffen, wo große / kleine / junge / alte Kinder zusammen spielen, quatschen, arbeiten und wachsen können.</p>
+      <p>Wir träumen von einer Art Dorf, das alle, die da leben, gestalten, bauen und betreiben. Wir wünschen uns eine Gemeinschaft von Individuen, die gerne geben, zuhören und sich respektieren.</p>
+    </section>
+
+    <section id="s02" class="chapter">
+      <p class="num">02</p>
+      <h2>Aufm Land und doch schnell in Hamburg</h2>
+      <p>Da wir den Kontakt zu Freunden, Familie und Arbeit in Hamburg nicht verlieren möchten, darf unser kleines Bullerbü nicht zu weit weg von Hamburg sein und in Auto-Nähe eines gut angebundenen Bahnhofs liegen.</p>
+      <p>Der Bahnhof liegt in einer Kleinstadt, in der es ein gutes Gymnasium gibt, in der man einkaufen kann und wo wir auch mal gerne in die Eisdiele gehen.</p>
+      <p>Der Hof an sich liegt entweder in Randlage der Kleinstadt oder in einer der umliegenden Gemeinden. Auf jeden Fall im Grünen. Gerne mit Wald, Wiesen und Wasser in der Nähe.</p>
+      <p>Wir haben bereits einige Regionen im Suchraster, sind aber noch offen für Wünsche und Vorschläge.</p>
+    </section>
+
+    <section id="s03" class="chapter">
+      <p class="num">03</p>
+      <h2>Persönlicher Wohnraum</h2>
+      <p>Der Hof an sich sollte die Möglichkeit bieten, dass dort mind. 5 Parteien in eigenen Wohneinheiten wohnen können. Sprich jede Partei hat ein eigenes Haus, Häuschen, Haushälfte, Wohnung oder Tiny House.</p>
+      <p>Was genau möglich ist, hängt stark von der Immobilie ab, für die wir uns letztendlich entscheiden. Wichtig ist uns nur, dass jede Familie, jedes Paar, jede Person seine eigenen vier Wände hat.</p>
+    </section>
+
+    <section id="s04" class="chapter">
+      <p class="num">04</p>
+      <h2>Gemeinsame Außenflächen und Gemeinschaftsräume</h2>
+      <p>Teilen würden wir uns die Außenflächen. Da gibt es sicherlich einen Hof, der von Gebäuden umrahmt wird. Da gibt es sicherlich einen Garten und Sitzgelegenheiten. Vielleicht sogar einen Teich, Bach oder Koppeln, nen Stück Wald oder Felder.</p>
+      <p>Außerdem teilen wir uns Gemeinschaftsräume und -gebäude. Was genau hängt von unseren Wünschen und den Möglichkeiten vor Ort ab. Toll fänden wir eine Art Gemeinschafts-Wohn-Ess-Küche, in der wir ab und an als Gruppe und mit externen Freunden zusammen kochen, essen, klönen und schwoofen. Außerdem ein Spiel- und Tobezimmer für die Kids. Toll fänden wir auch Werkstätten, Ateliers und Büros, in welchen wir unseren Beruf bzw. Hobby ausüben können. Richtiger Luxus wäre ein kleines Gym mit Sauna und Eisbecken.</p>
+    </section>
+
+    <section id="s05" class="chapter">
+      <p class="num">05</p>
+      <h2>Ein Paradies für Kinder</h2>
+      <p>Kinder sollen sich auf dem Hof sauwohl fühlen. Sie sollen frei spielen, entdecken, toben und Krach machen können. Es soll einen Spielplatz mit Spielgeräten geben. Ein Trampolin. Einen Spielraum für schlechtes Wetter und geteiltes Spielzeug. Kettcars, Fahrräder, Baumschaukel und vielleicht sogar eine Seilbahn.</p>
+      <p>Kinder werden es toll finden, dass nebenan andere Kinder wohnen, mit denen man was machen kann, ohne dass Mama oder Papa ein Playdate organisieren. Kinder werden es auch toll finden, dass es neben Mama und Papa noch andere große Leute gibt, die sich für einen interessieren, mit denen man quatschen kann oder die halt einfach nur da sind.</p>
+      <p>Eltern werden es toll finden, dass Kinder frei spielen und man dadurch mehr Momente für sich hat.</p>
+    </section>
+
+    <section id="s06" class="chapter">
+      <p class="num">06</p>
+      <h2>Dorfleben mit guten Nachbarn</h2>
+      <p>Wir stellen uns den Hof als eine Art kleines Dorf vor. Dauerhaft wohnen da irgendwas zwischen 5 und 8 Parteien, d.h. irgendwas zwischen 15 und 30 Menschen nennen den Hof ihr Zuhause. All diese Bewohner haben Freunde, Familie und Bekannte, die zu Besuch kommen. Die gehören dann auch irgendwie dazu.</p>
+      <p>Jede Partei wohnt für sich in einem eigenen Haus, Haushälfte, Wohnung oder Tiny House. Neben den Wohneinheiten gibt es viele gemeinsam genutzte Flächen und Räume und ggf. auch Gewerbe, die auf dem Hof angesiedelt sind.</p>
+      <p>Die Vorzüge von den eigenen vier Wänden, die uns und unseren Liebsten Privatsphäre und einen sicheren, geschützten Raum geben, werden wir also auch auf unserem Hof haben.</p>
+      <p>Darüber hinaus hat jeder Einzelne auf dem Grundstück noch viele weitere Räume, in die er sich je nach Lust und Laune bewegen kann. Wer sich austoben will, geht auf den Spielplatz oder ins Gym. Wer werkeln will, in die Werkstatt. Wer in Erde wühlen möchte, jätet Unkraut im Garten. Wer Ruhe braucht, setzt sich auf die Hofbank oder zieht sich sonstwohin zurück.</p>
+      <p>Zwischen den Nachbarn werden neue Beziehungen entstehen. Man wird sich ganz automatisch begegnen, grüßen und austauschen. Der Hof als bindendes Element wird immer wieder Anlass geben, sich in Gruppen zusammenzufinden. Sei es im Rahmen eines temporären Projektes (z. B. Umbau Scheune, Renovierung Gemeinschaftsküche, Erweiterung Spielplatz) oder im Rahmen von regelmäßigen Aktivitäten (Gruppe Gemüse, Gruppe Hühner, Gruppe Gemeinschaftsessen, Gruppe Hoffest …).</p>
+      <p>Uns ist klar, dass wir alle eine mehr oder minder große Macke haben, die sich besonders gerne in Beziehung mit anderen Menschen zeigt. In einer Gemeinschaft, wie wir sie erschaffen wollen, wird es Spannungen und Konflikte geben. Wir sehen aber den Mehrwert an Lebensqualität, der durch so eine Gemeinschaft entstehen kann, als so groß an, dass es die Mühe wert ist, sich diesen Widrigkeiten zu stellen und sie zu überwinden.</p>
+    </section>
+
+    <section id="s07" class="chapter">
+      <p class="num">07</p>
+      <h2>Den Hof gründen</h2>
+      <p>Die Idee zu einer Hofgemeinschaft spukt uns schon seit vielen Jahren im Kopf herum. Aktuell sind wir dabei, die Idee zu konkretisieren (wie z. B. mit dieser Website), das Gründerteam zu formen und mögliche Regionen, in denen wir gerne leben würden, zu identifizieren, um dort nach Objekten zu suchen.</p>
+      <p>Die Starter-Gruppe muss sich erstmal finden und dann gut persönlich kennenlernen und inhaltlich abstimmen. Menschlich muss das sehr gut passen (siehe unten) und inhaltlich müssen wir grundsätzlich auf einer Linie sein.</p>
+      <p>Die für den Hofstandort in Frage kommenden Regionen werden sich ganz klar an den Präferenzen des Gründerteams orientieren. Die Nähe zu Hamburg ist gesetzt. Die Nähe zu bestimmten Arbeitsstätten und sonstige Präferenzen werden eine Rolle spielen.</p>
+      <p>Um eine passende Immobilie in der Suchregion zu finden, werden wir uns mehr einfallen lassen müssen, als bei Immonet zu schauen oder die KI loszuschicken. Vielmehr werden wir in die Region gehen müssen, um den direkten Kontakt mit den Menschen vor Ort zu suchen. Wir werden uns und unser Projekt Maklern vorstellen, aber auch direkt bei den Besitzern von passenden Immobilien vorstellig werden, um zu fragen, ob sie Interesse am Verkauf haben oder vielleicht jemanden kennen.</p>
+      <p>Uns ist bewusst, dass die Chance, einen Hof zu finden, wo 5-10 Parteien sofort in fertige Wohneinheiten einziehen können und der außerdem noch einen tollen Bauerngarten mit Spielplatz, Badesee, Werkstatt, Gemeinschaftsküche und Atelier hat, gegen Null geht. Im Rahmen der Hofsuche werden wir nach und nach lernen, was es für Optionen auf dem Markt gibt und wie die Möglichkeiten sind, diese zu entwickeln.</p>
+    </section>
+
+    <section id="s08" class="chapter">
+      <p class="num">08</p>
+      <h2>Den Hof kaufen</h2>
+      <p>Irgendwann werden wir einen Hof gefunden haben, der uns anspricht und der in einer Region ist, in der wir leben wollen. Ggf. werden wir einen Plan haben, was noch am Hof gemacht werden muss, bevor wir als Gründerteam dort einziehen.</p>
+      <p>Wir als Gründerteam werden uns abstimmen, wer wie viel von den Kosten für Kauf bzw. evtl. Um-/Ausbaumaßnahmen tragen wird. Wir werden uns bis dahin darüber abgestimmt haben, welche Person den Hof kauft, sprich auf welche Person der Titel übergeht, nachdem wir beim Notar gewesen sind und den Kaufpreis gezahlt haben.</p>
+      <p>Das kann eine natürliche Person aus dem Gründerkreis sein, mit der sich andere Käufer vertraglich abstimmen. Das kann eine Personengesellschaft sein, die sich aus den einzelnen Käufern zusammensetzt. Das kann eine Körperschaft sein. Alles wird Vor- und Nachteile haben, die wir uns bis zu diesem Zeitpunkt im Detail vor Augen führen können, um dann eine fundierte Entscheidung zu treffen.</p>
+    </section>
+
+    <section id="s09" class="chapter">
+      <p class="num">09</p>
+      <h2>Das Gründerteam zieht ein</h2>
+      <p>Jetzt, wo uns der Hof gehört, werden sicherlich alle heiß darauf sein, dort einzuziehen. Je nachdem, in welchem Zustand die Wohngebäude sind, müssen wir diese vorher noch renovieren bzw. umbauen oder neu bauen. Hängt am Ende voll davon ab, was für einen Hof wir erwerben.</p>
+      <p>Der Umzug auf den Hof wird für viele ein großer Schritt sein. Wer aus der Stadt kommt, wagt sich raus aufs Land. Man löst sich aus einer gewohnten Umgebung. Kinder werden ggf. die Schule wechseln müssen. Die alten Freunde sind nicht mal eben so um die Ecke.</p>
+      <p>Aber der Einzug wird auch der Start von etwas Neuem sein. Ein Versuch, einer Idee und einem Plan eine Form zu geben. Wir werden sehr viel damit zu tun haben, unsere Wohnungen und den Hof so einzurichten, dass wir uns dort richtig wohl fühlen. Das geht nicht über Nacht und sollte auch nicht gehetzt werden. Nach und nach werden wir uns dabei kennen und hoffentlich schätzen lernen.</p>
+    </section>
+
+    <section id="s10" class="chapter">
+      <p class="num">10</p>
+      <h2>Den Hof gestalten und betreiben</h2>
+      <p>Jetzt, wo wir auf dem Hof wohnen, werden wir zig Ideen haben, was wir alles tun könnten und sollten, um den Hof an sich und das Leben darauf zu verbessern.</p>
+      <p>Jede Partei bestimmt selber, was sie in und mit ihren eigenen vier Wänden macht. Hinsichtlich aller Vorhaben, die das Gemeinschaftseigentum bzw. die Gemeinschaft betreffen, werden wir uns abstimmen müssen.</p>
+      <p>Sicherlich haben wir uns hinsichtlich des Entscheidungsprozesses in der Gruppe vor dem Kauf schon mal Gedanken gemacht bzw. uns beraten lassen. Aber der beste Prozess funktioniert nur, wenn die Mitglieder der Gruppe gut zueinander passen. Inwiefern uns so eine Zusammenstellung gelungen ist, werden wir dann sehen.</p>
+      <p>Uns liegt daran, dass alle Mitbewohner an pragmatischen Lösungen interessiert sind und nicht jeden Pups stundenlang ausdiskutieren wollen.</p>
+      <p>Uns scheint es eine gute Idee, wenn wir die Verantwortung für bestimmte Bereiche unter den Mitbewohnern aufteilen. Je nach Präferenz kann z. B. jemand dauerhaft oder befristet die Verantwortung übernehmen für „Hof sauber halten", „Gemeinschaftsräume sauber halten", „Orga Hof-Essen", „Rasen und Wiesen", „Gemüsetunnel", „Hühner" … uvm. „Verantwortung tragen" heißt dabei nicht „alle Arbeit selber machen müssen".</p>
+      <p>Am Ende des Tages sollte sich unser Handeln daran orientieren, was wir tun können und wollen, um ein Hofleben zu ermöglichen, in welchem sich alle wohl fühlen und welches möglichst lebendig ist. Das wird nicht immer klappen und nicht ohne Reibung vonstattengehen, sollte aber für die richtige Truppe möglich und meistens sogar mit Freude machbar sein.</p>
+    </section>
+
+    <section id="s11" class="chapter">
+      <p class="num">11</p>
+      <h2>Heterogene Gruppe mit homogenen Grundwerten</h2>
+      <p>Da wir als Gemeinschaft viel zusammen machen werden (entscheiden, planen, arbeiten, essen, quatschen …), halten wir es für extrem wichtig, dass die Menschen, die der Gemeinschaft angehören, gut miteinander können.</p>
+      <p>Wir sollten Werte wie Ehrlichkeit, Fairness und Respekt teilen. Wir sollten uns selber nicht zu ernst nehmen. Wir sollten unsere Interessen nicht über die Interessen anderer stellen. Wir sollten Freude daran haben, mit anzupacken. Wir sollten eher Chancen und Möglichkeiten als Gefahren und Probleme sehen.</p>
+      <p>Wir sind der Meinung, dass das Leben miteinander harmonischer, lebendiger und fröhlicher ist, wenn man eine Handvoll grundlegender Werte teilt. Irgendwie aus dem gleichen Holz geschnitzt ist.</p>
+      <p>Abgesehen davon ist uns Alter, Geschlecht, Gender, sexuelle Orientierung, Hautfarbe, Herkunft, politische Richtung etc. total wumpe. Zu rechts und zu links würde nicht zu uns passen. Ansonsten finden wir „bunt" toll und bereichernd!</p>
+    </section>
+
+    <section id="s12" class="chapter">
+      <p class="num">12</p>
+      <h2>Gerne mit Tieren</h2>
+      <p>Wir wünschen uns Tiere auf dem Hof. Einen Hund bringen wir schon mit. Katze und Hühner folgen dann sicherlich bald. Wenn jemand Pferde, Schweine, Ziegen halten möchte, stehen wir dem offen gegenüber. Tiger und Nilpferde sind raus.</p>
+    </section>
+
+    <section id="s13" class="chapter">
+      <p class="num">13</p>
+      <h2>Gerne mit Landwirtschaft</h2>
+      <p>Aktuell haben wir keinen Landwirt im Gründerkreis, sodass wir keinen landwirtschaftlichen Betrieb betreiben könnten.</p>
+      <p>Wir stehen jedoch der Option offen gegenüber, dass ein Junglandwirt mit Ambitionen, der keinen Hof erben wird und nicht genug Eigenkapital hat, einen Hof zu kaufen, Teil unserer Gemeinschaft wird, mit uns auf dem Hof lebt und diesen dann (in welchem Umfang auch immer) weiter betreibt bzw. zu neuem Leben erwachen lässt.</p>
+    </section>
+
+    <section id="s14" class="chapter">
+      <p class="num">14</p>
+      <h2>Gerne mit Gewerben</h2>
+      <p>Generell stehen wir dem Betrieb von Gewerben auf dem Hof sehr offen gegenüber. Vielleicht will ein Tischler in einem der Gebäude seine Werkstatt einrichten, ein Künstler sein Atelier oder ein Gärtner seine Gärtnerei. Da einige von uns teils remote digital arbeiten, könnten wir auch einen gemeinschaftlichen Büroraum einrichten.</p>
+      <p>Wer von uns am Ende auf dem Hof welcher Arbeit nachgeht, hängt davon ab, wer sich uns anschließt und welche räumlichen Möglichkeiten wir haben.</p>
+    </section>
+
+    <section id="s15" class="chapter">
+      <p class="num">15</p>
+      <h2>Aufnahme von Mitbewohnern</h2>
+      <p>Wenn wir als Gemeinschaft wachsen bzw. wenn wir frei gewordenen Wohnraum neu vergeben wollen, müssen wir neue Mitglieder in unsere Gemeinschaft aufnehmen.</p>
+      <p>Diesbezüglich werden wir uns zu gegebener Zeit Gedanken machen und können uns da sicherlich von anderen Hofgemeinschaften das eine oder andere in Richtung „Infotage", „Kennenlerngespräche" etc. abschauen.</p>
+      <p>Wenn dann jemand einzieht, könnte das erste Jahr noch eine Art „Probezeit" sein, in der sich alle erstmal davon überzeugen, dass das was Langfristiges werden soll. Während der Probezeit würde man dann zur Miete wohnen, um sich dann nach der Probezeit zu entscheiden, inwiefern man „Mitbesitzer" werden möchte.</p>
+    </section>
+
+    <section id="s16" class="chapter">
+      <p class="num">16</p>
+      <h2>Austritt von Mitbewohnern</h2>
+      <p>Es gibt verschiedene Gründe, warum jemand sich aus der Hofgemeinschaft verabschiedet. Berufliche oder familiäre Veränderung. Man merkt, dass das Leben auf dem Land oder bei uns doch nicht das passende ist. Man verabschiedet sich final aus dem Leben.</p>
+      <p>Wenn die Person bzw. die Partei bei uns mietet, kündigt sie das Mietverhältnis und zieht dann aus. Ziemlich einfache Sache.</p>
+      <p>Wenn jemand jedoch Miteigentümer vom Hof ist und seinen Anteil verkaufen will, ist die Sache etwas schwieriger, als wenn man seine Wohnung oder sein Einfamilienhaus verkaufen will. Auch wenn der „Verkaufende" generell das Interesse hat, einen möglichst hohen Preis für sein „Eigentum" zu erlangen, muss das Interesse der Gemeinschaft, einen möglichst zur Gemeinschaft passenden Nachfolger zu erlangen, überwiegen.</p>
+      <p>Die Eigentümergemeinschaft wird sich deswegen auf eine Art „Deckel" hinsichtlich des Verkaufspreises einigen müssen. Z. B. „Einkaufspreis" zzgl. „Investition" zzgl. „Inflationsausgleich". Auch ist ein Vorkaufsrecht der bleibenden Mitbewohner denkbar.</p>
+      <p>Alles nicht dringend aber wichtig und deswegen schon mal erwähnt.</p>
+    </section>
+
+    <section id="s17" class="chapter">
+      <p class="num">17</p>
+      <h2>Option „außerfamiliäre Hofnachfolge" / „Altenteil"</h2>
+      <p>Wenn Du einen Hof besitzt, keinen Nachfolger in der Familie hast und es Dir wichtig ist, dass das alles in gute Hände kommt, dann könnten wir ein interessanter Nachfolgekandidat sein.</p>
+      <p>Uns liegt viel daran, alte Substanz zu wahren, zu renovieren, auszubauen und mit Leben zu füllen.</p>
+      <p>Wir können Dir alles abkaufen, stehen aber anderen Modellen wie „Teilabkauf mit Altenteil", „Lebenszeitrente" o. Ä. offen gegenüber.</p>
+      <p>Wenn Du in der Lage bist, die Zügel loszulassen und eine beratende statt beherrschende Rolle einzunehmen, gäbe es auch die Option, als Teil unserer Gemeinschaft auf dem Hof wohnen zu bleiben.</p>
+    </section>
+
+    <section id="s18" class="chapter">
+      <p class="num">18</p>
+      <h2>Über uns</h2>
+      <p>Folgt in Kürze — abhängig davon, wer sich dem Gründerkreis anschließt.</p>
+    </section>
+</main>
+
+<section id="s19" class="kontakt">
+  <div class="wrap">
+    <p class="num">19</p>
+    <h2>Kontakt</h2>
+    <p class="lead">Hast Du Interesse, bei uns zu wohnen? Oder hast Du eine Immobilie, die für uns interessant sein könnte? Dann meld Dich gerne. E-Mail, WhatsApp, Signal, Telefon — geht alles.</p>
+    <p class="contact-name">Dietrich Wedegärtner <span class="role">(Initiator)</span></p>
+    <div class="contact-list">
+      <div class="contact-row">
+        <a href="mailto:wedegaertner@gmail.com">wedegaertner@gmail.com</a>
+        <button type="button" class="copy-btn" data-copy="wedegaertner@gmail.com" data-label-default="E-Mail kopieren" data-label-copied="E-Mail kopiert" aria-label="E-Mail kopieren">
+          <svg class="icon-copy" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <svg class="icon-check" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </button>
+      </div>
+      <div class="contact-row">
+        <a href="tel:+4917624362075">0176 2436 2075</a>
+        <button type="button" class="copy-btn" data-copy="0176 2436 2075" data-label-default="Telefonnummer kopieren" data-label-copied="Telefonnummer kopiert" aria-label="Telefonnummer kopieren">
+          <svg class="icon-copy" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <svg class="icon-check" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p class="num">Hofgemeinschaft bei Hamburg · 2026</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    var timer;
+    btn.addEventListener('click', function () {
+      var value = btn.getAttribute('data-copy');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).catch(function () {});
+      }
+      btn.classList.add('copied');
+      btn.setAttribute('aria-label', btn.getAttribute('data-label-copied'));
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        btn.classList.remove('copied');
+        btn.setAttribute('aria-label', btn.getAttribute('data-label-default'));
+      }, 1600);
+    });
+  });
+</script>
+
+</body>
+</html>
