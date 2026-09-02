@@ -11,9 +11,9 @@ Referenz für das Design-System.
 - `index.html` — die komplette Website. Ein einziges File: Markup, CSS und
   JS inline. Kein Framework, kein Build-Step, keine Dependencies außer
   Google Fonts. Direkt deploybar (jeder Static-Host, GitHub Pages, Netlify).
-- `202608 Hofgemeinschaft bei Hamburg.docx` — Quelldokument. Der gesamte
-  Text der Website stammt hieraus. Bei inhaltlichen Änderungen ist das
-  Dokument die Quelle der Wahrheit.
+- Ursprüngliches Quelldokument (`202608 Hofgemeinschaft bei Hamburg.docx`) ist
+  vollständig in `index.html` übernommen und liegt nicht mehr im Repo (lokal
+  archiviert). `index.html` ist ab jetzt die Quelle der Wahrheit für den Text.
 - `design/` — Quellen des Design-System-Canvas (`*.dc.html`, `canvas.json`).
   Nur für die Canvas-Ansicht nötig, nicht für die Website selbst.
 
