@@ -114,7 +114,28 @@
     margin: 0 0 16px;
   }
   .chapter p:last-child { margin-bottom: 0; }
-  #s18 p { color: var(--ink-soft); font-style: italic; }
+  .chapter ul {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .chapter ul li {
+    display: flex;
+    gap: 12px;
+    font: 400 17px/1.7 var(--font-sans);
+  }
+  .chapter ul li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 4px;
+    height: 4px;
+    margin-top: 12px;
+    background: var(--ink-soft);
+  }
+  .chapter ul:last-child { margin-bottom: 0; }
 
   .kontakt { background: var(--ink); color: var(--bg); }
   .kontakt .wrap { padding: 96px 32px; }
@@ -166,6 +187,7 @@
     .chapter:last-of-type { padding-bottom: 40px; }
     .chapter h2 { font: 600 21px/1.3 var(--font-sans); margin: 8px 0 16px; }
     .chapter p { font: 400 16px/1.65 var(--font-sans); margin: 0 0 12px; }
+    .chapter ul li { font: 400 16px/1.65 var(--font-sans); }
     .kontakt .wrap { padding: 48px 20px 56px; }
     .kontakt h2 { font: 600 26px/1.2 var(--font-sans); margin: 12px 0 16px; }
     footer.wrap { padding-top: 20px; padding-bottom: 20px; }
@@ -205,7 +227,8 @@
           <a class="toc-link" href="#s16"><span class="toc-num">16</span><span class="toc-title">Austritt von Mitbewohnern</span></a>
           <a class="toc-link" href="#s17"><span class="toc-num">17</span><span class="toc-title">Außerfamiliäre Hofnachfolge / Altenteil</span></a>
           <a class="toc-link" href="#s18"><span class="toc-num">18</span><span class="toc-title">Über uns</span></a>
-          <a class="toc-link" href="#s19"><span class="toc-num">19</span><span class="toc-title">Kontakt</span></a>
+          <a class="toc-link" href="#s19"><span class="toc-num">19</span><span class="toc-title">Unser Wunsch-Gründerteam</span></a>
+          <a class="toc-link" href="#s20"><span class="toc-num">20</span><span class="toc-title">Kontakt</span></a>
   </div>
   </div>
 </nav>
@@ -357,13 +380,33 @@
     <section id="s18" class="chapter">
       <p class="num">18</p>
       <h2>Über uns</h2>
-      <p>Folgt in Kürze - abhängig davon, wer sich dem Gründerkreis anschließt.</p>
+      <p>Das Gründungsteam besteht zur Zeit aus der Familie Goretzki und der Familie Wedegärtner.</p>
+      <p>Zur Familie Goretzki gehören Henrike (36), Fabi (36), Maja (6) und Karl (4). Henrike ist ausgebildete Pädagogin und Eventmanagerin und fängt bald eine neue Stelle als Kita-Leitung an. Fabi ist SAP Business Analyst bei Airbus und steuert dort digitale Projekte und Change-Prozesse. Karl geht zur Kita und Maja wurde gerade eingeschult.</p>
+      <p>Henrike und Fabi verfolgen die Idee einer Hofgemeinschaft seit Jahren und leben aktuell zur Miete auf einem Hof in Hollenstedt. Beide teilen die Sehnsucht nach einer guten nachbarschaftlichen Gemeinschaft mit Begegnung und viel Leben. Fabi ist außerdem Hobby-Gemüsebauer und wünscht sich mind. 200qm Fläche für seinen halb-automatisierten Gemüsetunnel.</p>
+      <p>Zur Familie Wedegärtner gehören aktuell Dietrich (49), Enno (18), Linda (4) und Nora (2). Dietrich ist gelernter Kaufmann und leidenschaftlicher Unternehmer. Er liebt es, Dinge zu gestalten und aufzubauen. Vor ein paar Jahren hat er seine IT Firma recht erfolgreich verkauft, sodass er sich aktuell voll dem Projekt „Aufbau Hofgemeinschaft" widmen kann. Sein Sohn Enno hat grad Abi gemacht, ist leidenschaftlicher Jäger und wird nur ab und an zu Besuch kommen. Seine Töchter Linda und Nora wohnen primär in Hamburg bei der Mutter und werden an Wochenenden und in Ferien auf dem Hof sein.</p>
+      <p>Dietrich zieht es schon seit mehr als 10 Jahren aufs Land und er verbringt mittlerweile den größten Teil seiner Zeit in Undeloh in der Nordheide. Er wünscht sich ein ruhigeres, naturnahes Leben zusammen mit authentischen Nachbarn, die Lust haben einen lebendigen Ort zu gestalten und zu leben. Er freut sich besonders auf die Sauna mit Eisbecken und wird donnerstags und sonntags abends intensive Aufgusszeremonien anbieten.</p>
+    </section>
+
+    <section id="s19" class="chapter">
+      <p class="num">19</p>
+      <h2>Unser Wunsch-Gründerteam</h2>
+      <p>Wir sehen die Wahrscheinlichkeit, dass unsere Hofstelle von Anfang an 8 Wohneinheiten für 8 Parteien bietet, als gering an. Wahrscheinlicher ist es, dass dort erst einmal 3-4 Familien einziehen können und wir dann nach und nach weiteren Wohnraum für weitere Mitbewohner schaffen.</p>
+      <p>Demnach sind noch 1-2 Plätze im Gründerteam frei.</p>
+      <p>Was wünschen wir uns von potenziellen Mitgründern?</p>
+      <ul>
+        <li>Ihr solltet genauso viel Lust auf ein Bullerbü-Dorf haben wie wir.</li>
+        <li>Ihr habt das Herz am richtigen Fleck und findet euch in unseren Werten wieder.</li>
+        <li>Ihr habt Zeit und seid motiviert, euch in die Gestaltung, den Aufbau und den Betrieb von Hof und Gemeinschaft mit einzubringen.</li>
+        <li>Ihr könnt euch das benötigte Eigenkapital und die monatliche Miete / das Hofgeld leisten.</li>
+      </ul>
+      <p>Da Dietrich seine Kinder ja nur in Teilzeit auf dem Hof hat, wünschen wir uns auf jeden Fall mind. eine weitere Familie mit Vollzeit-Kids. Für kinderliebe Hof-Omas / -Opas finden wir sicherlich auch einen Platz. Für alle anderen, die mit leuchtenden Augen zu uns kommen und mit denen wir uns auf Anhieb mega verstehen, sicherlich auch. Zur Not stellen wir halt ein paar Tiny Houses in den Garten.</p>
+      <p>Egal, ob ihr bei uns wohnen werdet oder nicht: In jedem Fall freuen wir uns, von euch zu hören. Der Austausch mit Menschen, die sich nach mehr Gemeinschaft sehnen, ist uns immer eine große Freude!</p>
     </section>
 </main>
 
-<section id="s19" class="kontakt">
+<section id="s20" class="kontakt">
   <div class="wrap">
-    <p class="num">19</p>
+    <p class="num">20</p>
     <h2>Kontakt</h2>
     <p class="lead">Hast Du Interesse, bei uns zu wohnen? Oder hast Du eine Immobilie, die für uns interessant sein könnte? Dann meld Dich gerne. E-Mail, WhatsApp, Signal, Telefon - geht alles.</p>
     <p class="contact-name">Dietrich Wedegärtner <span class="role">(Initiator)</span></p>

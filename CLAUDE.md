@@ -17,7 +17,7 @@ Referenz für das Design-System.
 - `design/` — Quellen des Design-System-Canvas (`*.dc.html`, `canvas.json`).
   Nur für die Canvas-Ansicht nötig, nicht für die Website selbst.
 
-Struktur der Seite: Eyebrow-Zeile → Hero → Inhaltsverzeichnis → 18 Kapitel
+Struktur der Seite: Eyebrow-Zeile → Hero → Inhaltsverzeichnis → 19 Kapitel
 (`<section class="chapter" id="sNN">`) → Kontaktband (dunkel, mit
 Copy-Buttons) → Fußzeile.
 
@@ -55,6 +55,10 @@ immer `uppercase` mit `letter-spacing: 0.06–0.08em`.
 | `.kontakt h2` | 34 / 1.2 / 600 | 26 / 1.2 / 600 |
 | `.toc-title` | 15 / 1.4 / 400 | unverändert |
 | Eyebrow / `.num` | 12 / 1.4 / 500 Mono | unverändert |
+
+Listen (`.chapter ul`): kein Browser-Bullet, stattdessen ein 4x4px-Punkt in
+`--ink-soft`, `gap: 12px` zum Text. Schrift wie `.chapter p` (17/1.7 Desktop,
+16/1.65 Mobile).
 
 ### Abstände — 4px-Basis
 
@@ -109,7 +113,7 @@ Breiten testen: 360, 390, 430, 640, 641, 768, 1000, 1440.
 - Deutsch, Anrede "Du".
 - **Kein Geviertstrich (—).** Immer Bindestrich (-).
 - Kapitelüberschriften und Reihenfolge folgen dem Quelldokument.
-- Inhaltsverzeichnis und Kapitel müssen synchron bleiben: 19 Einträge,
+- Inhaltsverzeichnis und Kapitel müssen synchron bleiben: 20 Einträge,
   `id="sNN"` passend zu `href="#sNN"`.
 
 ## Deployment
