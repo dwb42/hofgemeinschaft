@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  :root {
+    --bg: #F1F1F0;
+    --bg-panel: #E7E7E5;
+    --ink: #1A1A1A;
+    --ink-soft: #6B6B6B;
+    --line: #D4D4D2;
+    --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+  * { box-sizing: border-box; }
+  a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+  .t-eyebrow { font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; margin: 0; }
+  .t-h1 { font: 600 36px/1.15 var(--font-sans); letter-spacing: -0.005em; margin: 0; }
+  .t-h2 { font: 600 24px/1.2 var(--font-sans); margin: 0; }
+  .t-body { font: 400 15px/1.6 var(--font-sans); margin: 0; }
+  .t-mono-sm { font: 400 12px/1.5 var(--font-mono); margin: 0; }
+  .spec-display { font: 600 64px/1.05 var(--font-sans); letter-spacing: -0.01em; margin: 0; }
+  .spec-h1 { font: 600 40px/1.1 var(--font-sans); letter-spacing: -0.005em; margin: 0; }
+  .spec-h2 { font: 600 28px/1.2 var(--font-sans); margin: 0; }
+  .spec-eyebrow { font: 500 13px/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; margin: 0; }
+  .spec-body-lg { font: 400 19px/1.55 var(--font-sans); margin: 0; }
+  .spec-body { font: 400 16px/1.65 var(--font-sans); margin: 0; }
+  .spec-mono { font: 400 13px/1.5 var(--font-mono); margin: 0; }
+</style>
+</helmet>
+<div style="font-family: var(--font-sans); background: var(--bg); color: var(--ink); width: 1200px; min-height: 100%;">
+
+  <div style="padding: 64px 64px 48px; border-bottom: 1px solid var(--line);">
+    <p class="t-eyebrow" style="color: var(--ink-soft); margin: 0 0 16px;">Design System - v2 · Graphit</p>
+    <h1 class="t-h1">Hofgemeinschaft</h1>
+    <p class="t-body" style="color: var(--ink-soft); margin: 12px 0 0; max-width: 480px;">Grundlagen für die Website: Typografie, Farbe, Abstände, Bausteine. Monochrom, präzise, ohne Farbakzent.</p>
+  </div>
+
+  <!-- Typography -->
+  <div style="padding: 64px 64px 16px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px;">
+      <span class="t-eyebrow">01</span>
+      <h2 class="t-h2">Typografie</h2>
+      <span class="t-mono-sm" style="color: var(--ink-soft);">Archivo · IBM Plex Mono</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 32px; padding: 24px 0; border-top: 1px solid var(--line);">
+        <p class="spec-display">Ein Hof.</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft); white-space: nowrap;">Display - 64 / 1.05 / 600</p>
+      </div>
+
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 32px; padding: 24px 0; border-top: 1px solid var(--line);">
+        <p class="spec-h1">Melde dich.</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft); white-space: nowrap;">H1 - 40 / 1.1 / 600</p>
+      </div>
+
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 32px; padding: 24px 0; border-top: 1px solid var(--line);">
+        <p class="spec-h2">Was wir suchen</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft); white-space: nowrap;">H2 - 28 / 1.2 / 600</p>
+      </div>
+
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 32px; padding: 24px 0; border-top: 1px solid var(--line);">
+        <p class="spec-eyebrow">Gründungsphase - Hamburger Umland</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft); white-space: nowrap;">Eyebrow / Label - 13 / 1.4 / 500 / Mono</p>
+      </div>
+
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 32px; padding: 24px 0; border-top: 1px solid var(--line);">
+        <p class="spec-body-lg" style="max-width: 520px;">Nah genug an Hamburg, weit genug draußen, dass man die Vögel hört.</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft); white-space: nowrap;">Body Large / Lead - 19–20 / 1.55 / 400</p>
+      </div>
+
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 32px; padding: 24px 0; border-top: 1px solid var(--line);">
+        <p class="spec-body" style="max-width: 520px; color: var(--ink-soft);">Fließtext für Absätze und lange Lesestrecken auf der Website.</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft); white-space: nowrap;">Body - 16–17 / 1.65–1.7 / 400</p>
+      </div>
+
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 32px; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+        <p class="spec-mono" style="color: var(--ink-soft);">01 · 02 · 03 …</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft); white-space: nowrap;">Meta / Nummerierung - 13 / 1.5 / 400 / Mono</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Color -->
+  <div style="padding: 96px 64px 16px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px;">
+      <span class="t-eyebrow">02</span>
+      <h2 class="t-h2">Farbe - Graphit</h2>
+      <span class="t-mono-sm" style="color: var(--ink-soft);">Monochrom, kein Akzent</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="height: 96px; background: var(--bg); border: 1px solid var(--line);"></div>
+        <p class="t-mono-sm">Hintergrund</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">#F1F1F0</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="height: 96px; background: var(--bg-panel); border: 1px solid var(--line);"></div>
+        <p class="t-mono-sm">Fläche</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">#E7E7E5</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="height: 96px; background: var(--ink);"></div>
+        <p class="t-mono-sm">Text / Akzent</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">#1A1A1A</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="height: 96px; background: var(--ink-soft);"></div>
+        <p class="t-mono-sm">Text gedämpft</p>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">#6B6B6B</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Spacing -->
+  <div style="padding: 96px 64px 16px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px;">
+      <span class="t-eyebrow">03</span>
+      <h2 class="t-h2">Abstände</h2>
+      <span class="t-mono-sm" style="color: var(--ink-soft);">4px-Basis</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div style="width: 4px; height: 16px; background: var(--ink);"></div>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">4</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div style="width: 8px; height: 16px; background: var(--ink);"></div>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">8</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div style="width: 16px; height: 16px; background: var(--ink);"></div>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">16</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div style="width: 24px; height: 16px; background: var(--ink);"></div>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">24</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div style="width: 32px; height: 16px; background: var(--ink);"></div>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">32</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div style="width: 64px; height: 16px; background: var(--ink);"></div>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">64</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div style="width: 96px; height: 16px; background: var(--ink);"></div>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">96</p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 24px;">
+        <div style="width: 128px; height: 16px; background: var(--ink);"></div>
+        <p class="t-mono-sm" style="color: var(--ink-soft);">128</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Components -->
+  <div style="padding: 96px 64px 96px;">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px;">
+      <span class="t-eyebrow">04</span>
+      <h2 class="t-h2">Bausteine</h2>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 56px;">
+
+      <div>
+        <p class="t-mono-sm" style="color: var(--ink-soft); margin: 0 0 16px;">Button - primär</p>
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <span style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; font-family: var(--font-sans); font-weight: 500; font-size: 15px; color: var(--bg); background: var(--ink); border: 1px solid var(--ink); border-radius: 2px;">
+            Schreib uns
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; font-family: var(--font-sans); font-weight: 500; font-size: 15px; color: var(--ink); background: transparent; border: 1px solid var(--ink); border-radius: 2px;">
+            Mehr erfahren
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <p class="t-mono-sm" style="color: var(--ink-soft); margin: 0 0 16px;">Label</p>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span class="t-mono-sm" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 2px;">GRÜNDUNGSPHASE</span>
+          <span class="t-mono-sm" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 2px;">2026</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="t-mono-sm" style="color: var(--ink-soft); margin: 0 0 16px;">Eingabefeld</p>
+        <div style="display: flex; flex-direction: column; gap: 8px; max-width: 360px;">
+          <label class="t-eyebrow" style="color: var(--ink-soft);">E-Mail</label>
+          <div style="padding: 12px 0; border-bottom: 1px solid var(--ink); font-family: var(--font-sans); font-size: 15px; color: var(--ink-soft);">name@beispiel.de</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "artboards": [
+    { "file": "Foundations.dc.html", "x": 0, "y": 0, "w": 1200, "h": 2600, "page": "page-1" },
+    { "file": "Main.dc.html", "x": 1320, "y": 0, "w": 840, "h": 13400, "page": "page-1", "expand": "fill" },
+    { "file": "Mobile.dc.html", "x": 2280, "y": 0, "w": 390, "h": 17500, "page": "page-1", "expand": "fill" },
+    { "file": "Paletten.dc.html", "x": 0, "y": 0, "w": 2760, "h": 900, "page": "page-2" }
+  ],
+  "annotations": [
+    { "id": "note-foundations", "x": 0, "y": -100, "w": 480, "text": "Grundlagen: Typografie, Farbe, Abstände, Bausteine — Graphit", "page": "page-1" },
+    { "id": "note-main", "x": 1320, "y": -100, "w": 480, "text": "Startseite — kompletter Text aus dem Dokument, eine Seite", "page": "page-1" },
+    { "id": "note-mobile", "x": 2280, "y": -100, "w": 390, "text": "Mobile-Ansicht — gleicher Inhalt, schmalere Spalte", "page": "page-1" },
+    { "id": "note-paletten", "x": 0, "y": -100, "w": 600, "text": "Verworfene Optionen — entschieden: Graphit", "page": "page-2" }
+  ],
+  "pages": [
+    { "id": "page-1", "name": "Website" },
+    { "id": "page-2", "name": "Farb-Optionen" }
+  ],
+  "launch": { "view": "canvas", "page": "page-1" }
+}
