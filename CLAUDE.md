@@ -123,4 +123,5 @@ git add index.html && git commit && git push origin main
 ```
 
 Repo: `github.com/dwb42/hofgemeinschaft` (Branch `main`).
-Zugriff über einen repo-scoped SSH Deploy Key.
+Remote-URL: `git@github.com:dwb42/hofgemeinschaft.git` - Auth über den persönlichen SSH-Key (`~/.ssh/id_ed25519_github_dwb42`, per `Host github.com`
+in `~/.ssh/config`), kein separater Deploy Key.
