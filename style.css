@@ -126,12 +126,13 @@
     height: 32px;
     padding: 0;
     background: transparent;
-    border: 1px solid #5A5A59;
+    border: 1px solid var(--line);
     border-radius: 2px;
-    color: #D6D6D5;
+    color: var(--ink-soft);
     cursor: pointer;
     flex-shrink: 0;
   }
+  .kontakt .copy-btn { border-color: #5A5A59; color: #D6D6D5; }
   .copy-btn .icon-check { display: none; }
   .copy-btn.copied .icon-copy { display: none; }
   .copy-btn.copied .icon-check { display: inline-flex; }

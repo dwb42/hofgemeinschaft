@@ -8,12 +8,15 @@ Referenz für das Design-System.
 
 ## Aufbau
 
-- `index.html` — die Hauptseite. Markup und JS inline.
+- `index.html` — die Hauptseite.
 - `bauernhof-gesucht.html` — Unterseite: Infoblatt für Hofbesitzer und
   Makler. Der Inhalt stammt aus `assets/Hofgemeinschaft-Bauernhof-gesucht.pdf`.
 - `style.css` — **das Design-System, gemeinsam für beide Seiten.** Farben,
   Typo und Abstände stehen ausschließlich hier. Nie CSS in eine der HTML-
   Dateien zurückholen, sonst gibt es zwei Wahrheiten.
+- `script.js` — das gesamte JavaScript, ebenfalls für beide Seiten:
+  Copy-Buttons und die Modal-Logik. Die Modal-Logik hält sich selbst
+  zurück, wenn es auf der Seite keinen `a[data-sheet]` gibt.
 - `assets/` — Favicons, OG-Image und das PDF zum Download.
 - Ursprüngliches Quelldokument (`202608 Hofgemeinschaft bei Hamburg.docx`) ist
   vollständig in `index.html` übernommen und liegt nicht mehr im Repo (lokal
@@ -134,6 +137,11 @@ eine Quelle — nie den Inhalt in `index.html` duplizieren.
   das ✕ ist dort ein normaler Link auf `index.html`.
 - **Ohne JavaScript, bei `file://` oder wenn `fetch` scheitert**, folgt der
   Link ganz normal der Seite. Das ist Absicht und muss so bleiben.
+
+Die Copy-Buttons hängen deshalb an einem delegierten Listener am `document`,
+nicht an einer Schleife über die vorhandenen Buttons: die Buttons im Modal
+entstehen erst zur Laufzeit. Wer das auf eine Schleife zurückbaut, macht die
+Buttons im Modal still kaputt.
 
 Beim lokalen Testen: `python3 -m http.server` verwenden. Per Doppelklick
 geöffnet (`file://`) blockiert der Browser `fetch`, dann navigiert der Link
