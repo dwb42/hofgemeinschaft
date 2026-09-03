@@ -8,14 +8,21 @@ Referenz für das Design-System.
 
 ## Aufbau
 
-- `index.html` — die komplette Website. Ein einziges File: Markup, CSS und
-  JS inline. Kein Framework, kein Build-Step, keine Dependencies außer
-  Google Fonts. Direkt deploybar (jeder Static-Host, GitHub Pages, Netlify).
+- `index.html` — die Hauptseite. Markup und JS inline.
+- `bauernhof-gesucht.html` — Unterseite: Infoblatt für Hofbesitzer und
+  Makler. Der Inhalt stammt aus `assets/Hofgemeinschaft-Bauernhof-gesucht.pdf`.
+- `style.css` — **das Design-System, gemeinsam für beide Seiten.** Farben,
+  Typo und Abstände stehen ausschließlich hier. Nie CSS in eine der HTML-
+  Dateien zurückholen, sonst gibt es zwei Wahrheiten.
+- `assets/` — Favicons, OG-Image und das PDF zum Download.
 - Ursprüngliches Quelldokument (`202608 Hofgemeinschaft bei Hamburg.docx`) ist
   vollständig in `index.html` übernommen und liegt nicht mehr im Repo (lokal
   archiviert). `index.html` ist ab jetzt die Quelle der Wahrheit für den Text.
 - `design/` — Quellen des Design-System-Canvas (`*.dc.html`, `canvas.json`).
   Nur für die Canvas-Ansicht nötig, nicht für die Website selbst.
+
+Kein Framework, kein Build-Step, keine Dependencies außer Google Fonts.
+Direkt deploybar auf jedem Static-Host.
 
 Struktur der Seite: Eyebrow-Zeile → Hero → Inhaltsverzeichnis → 19 Kapitel
 (`<section class="chapter" id="sNN">`) → Kontaktband (dunkel, mit
@@ -107,6 +114,30 @@ Nach jeder CSS- oder Layout-Änderung diese drei Dinge verifizieren
    ergeben.
 
 Breiten testen: 360, 390, 430, 640, 641, 768, 1000, 1440.
+Immer **beide** Seiten prüfen — sie teilen sich `style.css`, eine Änderung
+dort wirkt auf beide.
+
+## Die Unterseite als Modal
+
+`bauernhof-gesucht.html` ist eine **echte, eigenständige Seite** und
+gleichzeitig der Inhalt des Modals auf der Hauptseite. Es gibt nur diese
+eine Quelle — nie den Inhalt in `index.html` duplizieren.
+
+- Beim Klick auf den Hero-Hinweis (`a[data-sheet]`) lädt ein kleines Skript
+  in `index.html` die Unterseite per `fetch`, hebt das `.sheet`-Element
+  heraus und zeigt es als Modal. Die URL wechselt per `history.pushState`
+  auf `bauernhof-gesucht.html`, ist also kopier- und teilbar.
+- Schließen (✕, Escape, Klick auf den Hintergrund) geht per `history.back()`
+  zurück — die Hauptseite bleibt dabei an derselben Scroll-Position stehen,
+  weil sie nie verlassen wurde.
+- Beim Direktaufruf der URL erscheint dieselbe Karte als vollwertige Seite;
+  das ✕ ist dort ein normaler Link auf `index.html`.
+- **Ohne JavaScript, bei `file://` oder wenn `fetch` scheitert**, folgt der
+  Link ganz normal der Seite. Das ist Absicht und muss so bleiben.
+
+Beim lokalen Testen: `python3 -m http.server` verwenden. Per Doppelklick
+geöffnet (`file://`) blockiert der Browser `fetch`, dann navigiert der Link
+statt das Modal zu öffnen — das ist kein Fehler.
 
 ## Textkonventionen
 
