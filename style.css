@@ -164,27 +164,8 @@
      (bauernhof-gesucht.html) und als Modal über der Hauptseite.
      ============================================================ */
 
-  /* --- Hinweis im Hero der Hauptseite --- */
-  .hero-aside {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    margin: 32px 0 0;
-  }
-  .hero-aside-label {
-    font: 500 12px/1.4 var(--font-mono);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .hero-aside-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font: 500 17px/1.5 var(--font-sans);
-  }
-  .hero-aside-link svg { flex-shrink: 0; }
+  /* --- Button im Hero der Hauptseite, führt zum Infoblatt --- */
+  .hero-cta { margin: 32px 0 0; }
 
   /* --- Abdunkelung hinter der Karte --- */
   .backdrop {
@@ -280,7 +261,7 @@
   body.sheet-open { overflow: hidden; }
 
   @media (max-width: 640px) {
-    .hero-aside { margin-top: 24px; }
+    .hero-cta { margin-top: 24px; }
     .sheet-scroll { padding: 0 12px; }
     .sheet { margin: 12px auto; }
     .sheet-head { padding: 16px 20px; }
